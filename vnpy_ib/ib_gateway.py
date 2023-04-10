@@ -577,8 +577,9 @@ class IbApi(EWrapper):
     ) -> None:
         """交易数据更新回报"""
         super().execDetails(reqId, contract, execution)
+        self.gateway.write_log("execution-time %s"%(execution.time))
 
-        dt: datetime = datetime.strptime(execution.time, "%Y%m%d  %H:%M:%S")
+        dt: datetime = datetime.strptime(execution.time, "%Y%m%d-%H:%M:%S")
         dt: datetime = dt.replace(tzinfo=LOCAL_TZ)
 
         trade: TradeData = TradeData(
@@ -759,7 +760,7 @@ class IbApi(EWrapper):
         if not self.status:
             return
 
-        self.client.cancelOrder(int(req.orderid))
+        self.client.cancelOrder(int(req.orderid),datetime.now().strftime('%Y%m%d %H:%M:%S'))
 
     def query_history(self, req: HistoryRequest) -> List[BarData]:
         """查询历史数据"""
