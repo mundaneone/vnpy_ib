@@ -307,9 +307,9 @@ class IbApi(EWrapper):
         msg: str = f"服务器时间: {time_string}"
         self.gateway.write_log(msg)
 
-    def error(self, reqId: TickerId, errorCode: int, errorString: str) -> None:
+    def error(self, reqId: TickerId, errorCode: int, errorString: str,advancedOrderRejectJson = "") -> None:
         """具体错误请求回报"""
-        super().error(reqId, errorCode, errorString)
+        super().error(reqId, errorCode, errorString,advancedOrderRejectJson)
     
         # 2000-2999信息通知不属于报错信息
         if reqId == self.history_reqid and errorCode not in range(2000, 3000):

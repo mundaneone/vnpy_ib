@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-    <img src ="https://img.shields.io/badge/version-9.81.1.6-blueviolet.svg"/>
+    <img src ="https://img.shields.io/badge/version-10.20.1-blueviolet.svg"/>
     <img src ="https://img.shields.io/badge/platform-windows|linux|macos-yellow.svg"/>
     <img src ="https://img.shields.io/badge/python-3.7|3.8|3.9|3.10-blue.svg" />
     <img src ="https://img.shields.io/github/license/vnpy/vnpy.svg?color=orange"/>
@@ -13,7 +13,7 @@
 
 ## 说明
 
-基于ibapi的9.81.1.post1版本开发的InteractiveBrokers交易接口。
+基于ibapiUnofficialPiccolo的10.20.1版本开发的InteractiveBrokers交易接口。
 
 IbGateway中的合约代码命名规则和举例：
 
